@@ -462,7 +462,7 @@
   }
   
   .bg {
-    background-image: linear-gradient(107.56deg, rgba(0, 0, 0, 0.87) 37.98%, rgba(0, 0, 0, 0) 87.98%), url("https://cdn.blockate.com/fireflies.webp");
+    background-image: linear-gradient(107.56deg, rgba(0, 0, 0, 0.87) 37.98%, rgba(0, 0, 0, 0) 87.98%), url("");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center, center;
