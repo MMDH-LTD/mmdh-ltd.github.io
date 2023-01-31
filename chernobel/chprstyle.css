@@ -1,1 +1,480 @@
-
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    min-height: 4rem;
+    padding-top: 1rem;
+    transition: background-color 200ms ease;
+    position: fixed;
+  }
+  .navbar__btn-list {
+    list-style-type: none;
+    font-size: 1.6rem;
+    text-rendering: optimizeLegibility;
+  }
+  .navbar__btn-list li {
+    display: inline-flex;
+  }
+  .navbar .navbar__social-list {
+    font-size: 1.2rem;
+    list-style-type: none;
+    text-rendering: optimizeLegibility;
+  }
+  .navbar .navbar__social-list li {
+    display: inline-flex;
+  }
+  
+  .nav-btn {
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: 400;
+    transition: all 200ms ease;
+    color: var(--nav-btn-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: lighter;
+    transition: all 200ms ease;
+  }
+  .nav-btn:link, .nav-btn:active, .nav-btn:visited {
+    color: var(--nav-btn-color);
+  }
+  .nav-btn--selected, .nav-btn--selected:link, .nav-btn--selected:active, .nav-btn--selected:visited {
+    color: var(--selected-btn-color);
+  }
+  .nav-btn--selected:hover, .nav-btn:hover {
+    color: var(--nav-btn-hover-color);
+  }
+  
+  .fake-navbar {
+    min-height: 4rem;
+    visibility: hidden;
+    position: static;
+  }
+  
+  .banner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .banner__wrapper {
+    max-height: 100%;
+    margin-top: 20vh;
+    margin-left: 12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+  }
+  .banner__wrapper p {
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+  .banner__wrapper__logo-img {
+    min-height: auto;
+    max-width: 34rem;
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+  .banner__wrapper #play-btn {
+    width: 15rem;
+    height: 4rem;
+    background-color: var(--play-btn-color);
+    color: black;
+    margin-top: 2rem;
+    padding: 1.5em;
+    transition: all 500ms ease;
+  }
+  .banner__wrapper #play-btn:hover {
+    background-color: var(--play-btn-hover-color);
+  }
+  .banner__wrapper #play-btn span {
+    font-size: 2.2rem;
+  }
+  
+  @media only screen and (min-width: 250px) and (max-width: 760px) {
+    html {
+      font-size: 11px;
+    }
+  
+    .banner__logo-img {
+      max-width: 90vw;
+    }
+  
+    .stats__box {
+      height: 90%;
+      width: 90% !important;
+    }
+  
+    .banner__wrapper {
+      margin: auto;
+      align-items: center;
+      max-width: 60vw;
+    }
+    .banner__wrapper p {
+      font-size: 3rem;
+      text-align: center;
+    }
+  
+    #play-btn {
+      width: 20rem;
+    }
+  }
+  @media only screen and (min-width: 760px) and (max-width: 1280px) {
+    .banner__logo-img {
+      max-width: 40rem;
+    }
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  :root {
+    --nav-bar-scrolled: #111111;
+    --nav-btn-color: #ecf0f1;
+    --nav-btn-hover-color: #c7c7c7;
+    --selected-btn-color: #c7c7c7;
+    --bg-color: black;
+    --play-btn-color: #cfa9ff;
+    --play-btn-hover-color: #e0cef7;
+    --default-btn-color: #74b9ff;
+    --default-btn-text-color: white;
+    --default-btn-hover-color: #0984e3;
+    --world-description-color: #c7c7c7;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .stats {
+    align-items: center;
+    height: 100%;
+    height: 100vh;
+    width: 100vw;
+  }
+  .stats .stats__container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .stats .stats__container p {
+    color: white;
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  
+  .stats__box {
+    color: white;
+    width: 50%;
+    margin: auto;
+  }
+  .stats__box ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  
+  .stat {
+    margin-top: 2rem;
+    background-color: white;
+    padding: 2rem;
+    display: inline-flex;
+    flex-basis: auto;
+    background-color: rgba(0, 0, 0, 0.87);
+    justify-content: space-between;
+    border-radius: 0.2rem;
+  }
+  
+  .world-section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    display: flex;
+    position: relative;
+    color: white;
+    padding-top: 3rem;
+    align-items: center;
+  }
+  .world-section__filter-controls {
+    color: white;
+  }
+  .world-section__filter-controls a:not(:first-child) {
+    margin-left: 5px;
+  }
+  .world-section__filter-controls .inline-btn--selected {
+    color: var(--selected-btn-color);
+  }
+  .world-section__grid-container {
+    display: grid;
+    width: 85vw;
+    height: 100%;
+    padding-top: 3rem;
+    grid-template-columns: repeat(auto-fill, 300px);
+    max-width: 1580px;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-auto-rows: 250px;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+  
+  .game-info-box, .game-info-box--game-player-count, .game-info-box--game-type {
+    padding: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    position: absolute;
+    font-size: 0.8rem;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .game-info-box--game-type {
+    margin-top: 1em;
+    margin-left: 1em;
+    z-index: 1;
+    top: 0;
+  }
+  .game-info-box--game-player-count {
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin-top: 1em;
+    margin-right: 1em;
+  }
+  
+  .world {
+    background-color: rgba(122, 105, 120, 0.411);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1%;
+    transition: all 200ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .world__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    text-align: center;
+  }
+  .world__play-overlay-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+    transition: all 200ms ease;
+  }
+  .world__play-overlay-hover--active {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .world__play-overlay-hover--disabled {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .world__play-overlay-hover a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .world__play-overlay-hover .la-play-circle {
+    font-size: 5rem;
+  }
+  .world__img-container {
+    max-height: 60%;
+    position: relative;
+  }
+  .world__img-container::after {
+    width: 100%;
+    display: block;
+    content: "";
+    padding-bottom: calc(2 / 1 * 100%);
+  }
+  .world__img-container img {
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .world__info {
+    margin-top: 3%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .world__info .world__title {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .world__info .world__made-by {
+    font-weight: 400;
+  }
+  .world__info .world__genre {
+    font-size: 0.7em;
+    margin-left: 5px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    padding: 5px;
+  }
+  .world__info__statistic {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: auto;
+    margin-bottom: 1em;
+  }
+  
+  .paginator {
+    display: flex;
+    color: white;
+    margin-right: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .paginator__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .paginator__page {
+    margin-left: 10px;
+    border: 1px solid white;
+    padding: 10px 12px 10px 12px;
+    transition: all 200ms ease;
+  }
+  .paginator__page--current {
+    background-color: white;
+    color: black;
+  }
+  .paginator__page--current-overlapped {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+  }
+  .paginator__page--current-overlapped:hover {
+    color: black !important;
+    background-color: #eeeeee !important;
+  }
+  .paginator__page--overlapped {
+    box-shadow: 1px 6px 5px 0px rgba(0, 0, 0, 0.3);
+    background-color: var(--nav-bar-scrolled);
+    color: white;
+    border: 1px solid var(--nav-bar-scrolled);
+  }
+  .paginator__page--overlapped:hover {
+    color: black;
+    background-color: white;
+  }
+  .paginator__page:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+  
+  :root {
+    color-scheme: dark;
+  }
+  
+  .selected {
+    color: var(--selected-btn-color);
+  }
+  
+  .scrolled {
+    background-color: var(--nav-bar-scrolled);
+    padding-bottom: 1rem;
+    box-shadow: 1px 6px 5px 0px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  
+  .button {
+    border-radius: 0.2rem;
+    width: 5em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--default-btn-color);
+    text-decoration: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .button:hover {
+    color: inherit;
+    background-color: var(--default-btn-hover-color);
+  }
+  .button:visited,
+  .button :active {
+    color: inherit;
+  }
+  .button span {
+    font-weight: 500;
+    user-select: none;
+    display: inline-block;
+  }
+  .button:not(.selected) {
+    color: var(--default-btn-text-color);
+  }
+  
+  .bg {
+    background-image: linear-gradient(107.56deg, rgba(0, 0, 0, 0.87) 37.98%, rgba(0, 0, 0, 0) 87.98%), url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center, center;
+    background-attachment: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    z-index: -1;
+    transition: background-image 1000ms ease-out;
+  }
+  
+  .overlay {
+    width: 100vw;
+  }
+  
