@@ -11,7 +11,6 @@
 		var gameType = 'expert';
 		var zoom = '100';
 		var position = 'center';
-		var isNightMode = false;
 		var hashParts, i;
 		var minesweeper;
 
@@ -25,7 +24,6 @@
 					case '150':          zoom = '150';              break;
 					case '200':          zoom = '200';              break;
 					case 'left':         position = 'left';         break;
-					case 'night':        isNightMode = true;        break;
 				}
 			}
 		}
@@ -33,14 +31,9 @@
 		$('#' + gameType).attr('checked', true);
 		$('#zoom' + zoom).attr('checked', true);
 		$('#position-' + position).attr('checked', true);
-		$('#nightMode').attr('checked', isNightMode);
 
 		document.getElementById('game-container').className = 'z' + zoom;
 		setPosition(position);
-
-		if (isNightMode) {
-			toggleNightMode(isNightMode);
-		}
 
 		minesweeper = new Minesweeper([
 			[ 3, 19, 56],
@@ -117,11 +110,6 @@
 			setHash();
 		});
 
-		$('input[name="nightMode"]').change(function() {
-			var isNightMode = $(this).is(':checked');
-			toggleNightMode(isNightMode);
-			setHash();
-		});
 
 		$("#controls-link, #controls-close").click(function() {
 			$("#options").hide();
@@ -227,9 +215,6 @@
 			}
 		}
 
-		function toggleNightMode(isOn) {
-			$('body').toggleClass('night-mode', isOn);
-		}
 
 		function getOptions() {
 			var gameTypeId;
@@ -313,7 +298,6 @@
 			var gameType = 'expert';
 			var zoom = $('input[name="zoom"]:checked').val();
 			var position = $('input[name="position"]:checked').val();
-			var isNightMode = $('input[name="nightMode"]').is(':checked');
 			var hashParts = [];
 
 			if ($("#beginner").attr("checked")) {
@@ -329,10 +313,6 @@
 
 			if (position != "center") {
 				hashParts.push(position);
-			}
-
-			if (isNightMode) {
-				hashParts.push('night');
 			}
 
 			if (hashParts.length > 0) {
@@ -455,12 +435,6 @@
 					<td style="padding: 6px; border-top: 1px solid #AAA;">
 						<label><input type="radio" name="position" id="position-center" value="center" /> Center</label><br />
 						<label><input type="radio" name="position" id="position-left" value="left" checked="checked" /> Left</label>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding: 6px; border-top: 1px solid #AAA;"><label for="nightMode"><strong>Night Mode</strong></label></td>
-					<td style="padding: 6px; border-top: 1px solid #AAA;">
-						<input type="checkbox" name="nightMode" id="nightMode" />
 					</td>
 				</tr>
 			</table>
